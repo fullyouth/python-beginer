@@ -49,6 +49,7 @@ def send_email(sender_email, sender_password, receiver_emails,
             server.sendmail(sender_email, receiver_emails, msg.as_string())
         print("邮件发送成功！")
     except Exception as e:
+        # format 格式化字符串
         print(f"邮件发送失败: {str(e)}")
 
 # 使用示例
@@ -76,4 +77,5 @@ if __name__ == "__main__":
     }
 
     # 发送邮件
+    ## ** 解包字典 转为 关键字参数
     send_email(**config)
